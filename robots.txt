@@ -1,0 +1,4 @@
+User-agent: *
+disallow: /img/backgrounds
+disallow: /img/dominique_heinelt.png
+disallow: /img/scroll.gif

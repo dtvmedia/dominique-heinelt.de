@@ -1,35 +1,53 @@
+/**
+ * Check if element is scrolled into view
+ * @param elem
+ * @return {boolean}
+ */
+function isScrolledIntoViewWithOverlayScrollbars( elem ) {
+    const docViewBottom = $( '.os-viewport' ).height();
+
+    const elemTop = $( elem ).offset().top;
+    const elemBottom = elemTop + $( elem ).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= 0));
+}
+
+/**
+ * Updates the animated content
+ */
+function updateAnimatedContent() {
+    $( '.animated:not(.infinite)' ).each( function () {
+        if ( isScrolledIntoViewWithOverlayScrollbars( this ) === true ) {
+            $( this ).removeClass( 'hidden' ).addClass( $( this ).data( 'animation' ) );
+        }
+    } );
+}
+var Scrollbar;
+/**
+ * On Load Handler
+ */
 $( document ).ready( function () {
-    // Check if element is scrolled into view
-    function isScrolledIntoView( elem ) {
-        const docViewTop = $( window ).scrollTop();
-        const docViewBottom = docViewTop + $( window ).height();
+    const Body = $( 'body' );
 
-        const elemTop = $( elem ).offset().top;
-        const elemBottom = elemTop + $( elem ).height();
-
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-
-    function updateAnimatedContent() {
-        $( '.animated:not(.infinite)' ).each( function () {
-            if ( isScrolledIntoView( this ) === true ) {
-                $( this ).removeClass( 'hidden' ).addClass( $( this ).data( 'animation' ) );
+    // Init Custom Scrollbars
+    Body.overlayScrollbars( {
+        callbacks : {
+            onScroll: function () {
+                // If element is scrolled into view, animate it
+                updateAnimatedContent();
             }
-        } );
-    }
-
-    // If element is scrolled into view, fade it in
-    $( window ).scroll( function () {
-        updateAnimatedContent();
+        }
     } );
+    Scrollbar = Body.overlayScrollbars();
 
-    $( "a[href^='#']" ).click( function ( e ) {
-        e.preventDefault();
-        const dest = $( this ).attr( 'href' ).substring( 1 );
-
-        $( 'html,body' ).animate( { scrollTop: $( "a[name='" + dest + "']" ).offset().top - 80 }, 'slow' );
-    } );
-
-    // On Load
+    // Initial Animation Update
     updateAnimatedContent();
+
+    // Scroll down button
+    $( "a[href='#about']" ).click( function ( e ) {
+        e.preventDefault();
+
+        Scrollbar.scroll({ y : 1025 + 'px' }, 600);
+    } );
+
 } );

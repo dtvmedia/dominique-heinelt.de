@@ -1,0 +1,14 @@
+{
+    "name": "Dominique Heinelt",
+    "short_name": "D. Heinelt",
+    "icons": [
+        {
+            "src": "/img/favicons/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#004487",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

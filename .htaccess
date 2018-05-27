@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^index.*$ https://dominique-heinelt.de/ [R=301,L]

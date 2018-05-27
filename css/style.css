@@ -3,14 +3,13 @@ body {
     font-family: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-a {
+a, .btn-link {
     color: #004487;
 }
 
 .btn-outline-success {
     color: #00dda5;
-    background-color: transparent;
-    background-image: none;
+    background: transparent none;
     border-color: #00cd95;
 }
 
@@ -47,6 +46,7 @@ h3 i.fas, h3 i.far, h3 i.fal {
 header {
     height: 1000px;
     display: block;
+    position: relative;
     padding-top: 150px;
     padding-bottom: 150px;
     background: url("../img/backgrounds/dresden.jpg") bottom center black;
@@ -83,7 +83,7 @@ header h2 {
 header .scroll-animation {
     width: 60px;
     position: absolute;
-    bottom:20px;
+    bottom: 80px;
     left: 50%;
     margin-left: -30px;
 }
@@ -93,11 +93,15 @@ footer {
     background: #004487;
     color: white;
     font-size: 14px;
-    padding:20px 20px 1px;
+    padding: 20px 20px 1px;
 }
 
 footer a {
     color: deepskyblue;
+}
+
+footer a:hover {
+    color: #0099d0;
 }
 
 footer span {
@@ -204,7 +208,6 @@ footer span {
     margin-bottom: 10px;
 }
 
-
 .timeline ul li div a {
     float: right;
     padding-right: 0;
@@ -219,8 +222,6 @@ footer span {
     border-width: 8px 16px 8px 0;
     border-color: transparent #f8f8f8 transparent transparent;
 }
-
-
 
 /** Utils **/
 .pl-6 {
