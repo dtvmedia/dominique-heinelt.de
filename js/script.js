@@ -7,7 +7,7 @@ function isScrolledIntoViewWithOverlayScrollbars( elem ) {
     const docViewBottom = $( '.os-viewport' ).height();
 
     const elemTop = $( elem ).offset().top;
-    const elemBottom = elemTop + $( elem ).height();
+    const elemBottom = elemTop + 25;
 
     return ((elemBottom <= docViewBottom) && (elemTop >= 0));
 }
@@ -22,7 +22,7 @@ function updateAnimatedContent() {
         }
     } );
 }
-var Scrollbar;
+
 /**
  * On Load Handler
  */
@@ -38,7 +38,7 @@ $( document ).ready( function () {
             }
         }
     } );
-    Scrollbar = Body.overlayScrollbars();
+    const Scrollbar = Body.overlayScrollbars();
 
     // Initial Animation Update
     updateAnimatedContent();

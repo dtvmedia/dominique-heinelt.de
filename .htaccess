@@ -1,2 +1,5 @@
 RewriteEngine on
 RewriteRule ^index.*$ https://dominique-heinelt.de/ [R=301,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
