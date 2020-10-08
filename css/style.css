@@ -1,5 +1,7 @@
 /** General **/
 body {
+    background: #eeeeee;
+    color: #21252e;
     font-family: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -36,10 +38,11 @@ h3 i.fas, h3 i.far, h3 i.fal {
     padding: 13px;
     color: white;
     margin-right: 5px;
-    margin-left: -2.5em;
-    width: 2.1em;
+    margin-left: -2.7em;
+    width: 2.2em;
     text-align: center;
     background: #004487;
+    font-size: 28px;
 }
 
 /** Header **/
@@ -50,6 +53,14 @@ header {
     padding-top: 150px;
     padding-bottom: 150px;
     background: url("../img/backgrounds/dresden.jpg") bottom center black;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 680px;
+    margin-top: -150px;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 1759px) {
@@ -68,6 +79,14 @@ header h1 {
     color: deepskyblue;
     font-size: 72px;
     font-weight: lighter;
+    margin-top: 30px;
+}
+
+header h1 .title {
+    display: block;
+    font-size: 24px;
+    color: #84bbd4;
+    line-height: 10px;
 }
 
 @media screen and (max-width: 400px) {
@@ -90,7 +109,7 @@ header .scroll-animation {
 
 /** Footer **/
 footer {
-    background: #004487;
+    background: rgb(0, 37, 89);
     color: white;
     font-size: 14px;
     padding: 20px 20px 1px;
@@ -128,6 +147,7 @@ footer span {
 
 .skill-item .progress {
     height: 4px;
+    background: white;
 }
 
 .skill-item .progress .progress-bar {
