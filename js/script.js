@@ -38,7 +38,12 @@ $(document).ready(function() {
             }
         }
     });
-    const Scrollbar = Body.overlayScrollbars();
+    const Scrollbar = Body.overlayScrollbars({
+        overflowBehavior : {
+            x : "hidden",
+            y : "scroll"
+        },
+    });
 
     // Initial Animation Update
     updateAnimatedContent();
