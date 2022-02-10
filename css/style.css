@@ -6,7 +6,7 @@ body {
 }
 
 a, .btn-link {
-    color: #004487;
+    color: rgb(0, 105, 187);
 }
 
 .btn-outline-success {
@@ -24,6 +24,14 @@ a, .btn-link {
 main .container-fluid {
     max-width: 1280px;
     margin: auto;
+}
+
+main {
+    max-width: 1440px;
+    background: white;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    margin: -60px auto auto;
+    position: relative;
 }
 
 h3 {
@@ -102,25 +110,16 @@ header h2 {
 header .scroll-animation {
     width: 60px;
     position: absolute;
-    bottom: 80px;
+    bottom: 120px;
     left: 50%;
     margin-left: -30px;
 }
 
 /** Footer **/
 footer {
-    background: rgb(0, 37, 89);
-    color: white;
+    color: gray;
     font-size: 14px;
-    padding: 20px 20px 1px;
-}
-
-footer a {
-    color: deepskyblue;
-}
-
-footer a:hover {
-    color: #0099d0;
+    padding: 25px 20px 5px;
 }
 
 footer span {
@@ -147,21 +146,31 @@ footer span {
 
 .skill-item .progress {
     height: 4px;
-    background: white;
+    background: #eeeeee;
+    box-shadow: 1px 1px 2px inset rgba(0, 0, 0, 0.2);
 }
 
 .skill-item .progress .progress-bar {
     background: #00dda5;
+    box-shadow: 1px 1px 2px inset rgba(0, 0, 0, 0.2);
 }
 
 /** Contact **/
 .contact-item i {
     font-size: 36px;
-    float: left;
     margin: 5px 12px 0 0;
 }
 
 .contact-item strong {
+    display: block;
+    position: relative;
+}
+
+.contact-item div.flex-grow-1 > p > span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100vw - 175px);
     display: block;
 }
 
@@ -196,18 +205,12 @@ footer span {
 .timeline ul li div {
     position: relative;
     bottom: 0;
-    width: 30vw;
+    width: calc(min(1440px, 100vw) / 2.5 - 100px);
 }
 
 @media screen and (max-width: 991px) {
     .timeline ul li div {
-        width: 60vw;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .timeline ul li div {
-        width: 40vw;
+        width: calc(100vw - 180px);
     }
 }
 
@@ -225,10 +228,11 @@ footer span {
 
 .timeline ul li div img {
     max-height: 50px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
-.timeline ul li div a {
+.timeline ul li div > a {
     float: right;
     padding-right: 0;
 }

@@ -3,10 +3,10 @@
  * @param elem
  * @return {boolean}
  */
-function isScrolledIntoViewWithOverlayScrollbars( elem ) {
-    const docViewBottom = $( '.os-viewport' ).height();
+function isScrolledIntoViewWithOverlayScrollbars(elem) {
+    const docViewBottom = $('.os-viewport').height();
 
-    const elemTop = $( elem ).offset().top;
+    const elemTop = $(elem).offset().top;
     const elemBottom = elemTop + 25;
 
     return ((elemBottom <= docViewBottom) && (elemTop >= 0));
@@ -16,40 +16,39 @@ function isScrolledIntoViewWithOverlayScrollbars( elem ) {
  * Updates the animated content
  */
 function updateAnimatedContent() {
-    $( '.animated:not(.infinite)' ).each( function () {
-        if ( isScrolledIntoViewWithOverlayScrollbars( this ) === true ) {
-            $( this ).removeClass( 'hidden' ).addClass( $( this ).data( 'animation' ) );
+    $('.animated:not(.infinite)').each(function() {
+        if (isScrolledIntoViewWithOverlayScrollbars(this) === true) {
+            $(this).removeClass('hidden').addClass($(this).data('animation'));
         }
-    } );
+    });
 }
 
 /**
  * On Load Handler
  */
-$( document ).ready( function () {
-    const Body = $( 'body' );
+$(document).ready(function() {
+    const Body = $('body');
 
     // Init Custom Scrollbars
-    Body.overlayScrollbars( {
-        callbacks : {
-            onScroll: function () {
+    Body.overlayScrollbars({
+        callbacks: {
+            onScroll: function() {
                 // If element is scrolled into view, animate it
                 updateAnimatedContent();
             }
         }
-    } );
+    });
     const Scrollbar = Body.overlayScrollbars();
 
     // Initial Animation Update
     updateAnimatedContent();
 
     // Scroll down button
-    $( "a[href='#about']" ).click( function ( e ) {
+    $("a[href='#about']").click(function(e) {
         e.preventDefault();
 
-        Scrollbar.scroll({ y : 1025 + 'px' }, 600);
-    } );
-
+        Scrollbar.scroll({y: 950 + 'px'}, 600);
+    });
 
     particlesJS("particles-js", {
         "particles": {
@@ -161,4 +160,4 @@ $( document ).ready( function () {
         },
         "retina_detect": true
     });
-} );
+});
