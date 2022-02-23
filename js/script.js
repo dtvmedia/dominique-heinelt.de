@@ -41,7 +41,6 @@ $(document).ready(function() {
     const Scrollbar = Body.overlayScrollbars({
         overflowBehavior : {
             x : "hidden",
-            y : "scroll"
         },
     });
 
@@ -52,7 +51,7 @@ $(document).ready(function() {
     $("a[href='#about']").click(function(e) {
         e.preventDefault();
 
-        Scrollbar.scroll({y: 950 + 'px'}, 600);
+        document.getElementById('main').scrollIntoView({behavior: "smooth"});
     });
 
     particlesJS("particles-js", {
