@@ -26,6 +26,11 @@ main .container-fluid {
     margin: auto;
 }
 
+header .picture {
+    border-radius: 100%;
+    filter: saturate(150%) contrast(95%);
+}
+
 main {
     max-width: 1440px;
     background: white;
