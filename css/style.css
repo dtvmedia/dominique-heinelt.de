@@ -2,8 +2,8 @@
 body {
     color: #21252e;
     font-family: "Segoe UI", "Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    background-size: cover;
     background: black url("../img/backgrounds/dresden.jpg") no-repeat center;
+    background-size: cover;
 }
 
 a, .btn-link {
