@@ -29,7 +29,7 @@ main .container-fluid {
 
 header .picture {
     border-radius: 100%;
-    filter: saturate(150%) contrast(95%);
+    filter: saturate(110%) contrast(95%);
 }
 
 main {
